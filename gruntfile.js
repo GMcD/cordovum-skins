@@ -28,11 +28,12 @@ module.exports = function (grunt) {
                     jQuery : true,
                     JSONForm : true,
                     console : true,
-                    module : true
+                    module : true,
+                    app : true
                 }
             },
             files: {
-                src: [ 'app/js/*.js' ]
+                src: [ 'skin/js/*.js' ]
             },
         },
 
@@ -40,13 +41,13 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    { src: 'app/css/*', dest: appwww, expand: true },
-                    { src: 'app/js/**', dest: appwww, expand: true },
-                    { src: 'app/tpl/**', dest: appwww, expand: true },
-                    { src: 'app/img/**', dest: appwww, expand: true },
-                    { src: 'app/fonts/**', dest: appwww, expand: true },
-                    { src: 'app/app.html', dest: appwww, expand: true },
-                    { src: 'app/require.app.js', dest: appwww, expand: true },
+                    { src: 'skin/css/*', dest: appwww, expand: true },
+                    { src: 'skin/js/**', dest: appwww, expand: true },
+                    { src: 'skin/tpl/**', dest: appwww, expand: true },
+                    { src: 'skin/img/**', dest: appwww, expand: true },
+                    { src: 'skin/fonts/**', dest: appwww, expand: true },
+                    { src: 'skin/app.html', dest: appwww, expand: true },
+                    { src: 'skin/require.app.js', dest: appwww, expand: true },
 /*                    { src: 'bower/requirejs/require.js', dest: appwww, expand: true },
                     { src: 'bower/requirejs-text/text.js', dest: appwww, expand: true },
                     { src: 'bower/backbone/backbone.js', dest: appwww, expand: true },
@@ -70,43 +71,10 @@ module.exports = function (grunt) {
                     { src: 'bower/jscrollpane/themes/lozenge/style/jquery.jscrollpane.lozenge.css', dest: appwww, expand: true },
                     { src: 'bower/jasmine/lib/jasmine-core/*.js', dest: appwww, expand: true },
                     { src: 'bower/jasmine/lib/jasmine-core/jasmine.css', dest: appwww, expand: true }, */
-                    { src: 'app/jasmine.html', dest: appwww, expand: true },
-                    { src: 'app/require.jasmine.js', dest: appwww, expand: true },
-                    { src: 'app/tests/**', dest: appwww, expand: true },
+                    { src: 'skin/jasmine.html', dest: appwww, expand: true },
+                    { src: 'skin/require.jasmine.js', dest: appwww, expand: true },
+                    { src: 'skin/tests/**', dest: appwww, expand: true },
                 ]
-            },
-        },
-        /*
-         * Build Out Cordova Instance
-         */
-        cordovacli: {
-            options: {
-                path: appwww
-            },        
-            cordova: {
-                options: {
-                    command: ['prepare'],
-                }
-            },
-            build: {
-                options: {
-                    command: ['build'],
-                }
-            },
-            create: {
-                options: {
-                    path: 'news',
-                    command: 'create',
-                    id: 'com.projectscapa.news',
-                    name: 'news'
-                }
-            },
-            add_platforms: {
-                options: {
-                    command: 'platform',
-                    action: 'add',
-                    platforms: ['ios', 'android']
-                }
             },
         },
         // Web server to test against
@@ -122,11 +90,11 @@ module.exports = function (grunt) {
                 src: [ 'jquery','underscore', 'home' ],
                 options: {
                     keepRunner: true,
-                    specs: ['app/tests/*.js'],
+                    specs: ['skin/tests/*.js'],
                     host : 'http://127.0.0.1:8000/',
                     template: require('grunt-template-jasmine-requirejs'),
                     templateOptions: {
-                        requireConfigFile: [ 'app/require.app.js', 'app/require.jasmine.js' ]
+                        requireConfigFile: [ 'skin/require.app.js', 'skin/require.jasmine.js' ]
                     }
                 }
             }
@@ -135,7 +103,7 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 files: {
-                    'app/css/app.css' : 'app/scss/app.scss'
+                    'skin/css/app.css' : 'skin/scss/app.scss'
                 }
             }
         },
@@ -143,7 +111,7 @@ module.exports = function (grunt) {
         uglify: {
             files: { 
                 src: ['js/*.js', '!js/*.min.js'],  // source files mask
-                dest: '../dist/js',   // destination folder
+                dest: 'dist/js',   // destination folder
                 expand: true,    // allow dynamic building
                 flatten: true,   // remove all unnecessary nesting
                 rename  : function (dest, src) {
@@ -158,7 +126,7 @@ module.exports = function (grunt) {
         cssmin: {
             skin: {
                 files: {
-                    '../dist/css/s.css': ['app/css/app.css', 'bower/font-awesome/css/font-awesome.css', 'bower/jscrollpane/style/jquery.jscrollpane.css', 'bower/jscrollpane/themes/lozenge/style/jquery.jscrollpane.lozenge.css']
+                    'dist/css/s.css': ['skin/css/app.css', 'bower/font-awesome/css/font-awesome.css', 'bower/jscrollpane/style/jquery.jscrollpane.css', 'bower/jscrollpane/themes/lozenge/style/jquery.jscrollpane.lozenge.css']
                 }
             },
         },
@@ -168,18 +136,18 @@ module.exports = function (grunt) {
                 options: {
                     baseUrl: '.',
                     name: 'node_modules/almond/almond.js',
-                    include: 'app',
-                    mainConfigFile: 'require.app.js',
+                    include: ['app','router'],
+                    mainConfigFile: 'skin/require.app.js',
                     insertRequire: ['app'],
-                    out: '../dist/js/opt.app.js',
-                    optimize: 'uglify'
+                    out: 'dist/js/opt.app.js',
+                    optimize: 'none'
                 }
             },
 
         },
 
         watch: {
-            files: ['app/**'],
+            files: ['skin/**'],
             tasks: ['default'],
 //            tasks: ['cordova'],
 //            tasks: ['production'],
@@ -196,14 +164,14 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
-    grunt.loadNpmTasks('grunt-cordovacli');
+//    grunt.loadNpmTasks('grunt-cordovacli');
 
     /* SPA build test and push task */
     grunt.registerTask('default', [ 'jshint', 'sass', 'connect', 'jasmine', 'copy' ]);
     /* Task to build device packages */
     grunt.registerTask('cordova', [ 'sass', 'copy', 'cordovacli:cordova' ]);
     /* Initial Setup Task - Create Cordova App and add ios and android */
-    grunt.registerTask('setup', [ 'cordovacli:create', 'cordovacli:add_platforms' ]);
+//    grunt.registerTask('setup', [ 'cordovacli:create', 'cordovacli:add_platforms' ]);
     /* Compile them up */
     grunt.registerTask('production', [ 'jshint', 'sass', 'connect', 'jasmine', 'cssmin', 'copy', 'requirejs' ]);
 

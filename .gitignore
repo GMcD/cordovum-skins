@@ -16,4 +16,4 @@ _SpecRunner.html
 dist/
 bower/
 node_modules/
-app/css/
+skin/css/

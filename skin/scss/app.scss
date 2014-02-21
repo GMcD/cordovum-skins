@@ -13,8 +13,8 @@
 
 @import "_variables.custom";
 
-@import "bower_components/bootstrap-sass/lib/bootstrap";
-@import "bower_components/bourbon/app/assets/stylesheets/_bourbon";
+@import "bower/bootstrap-sass/lib/bootstrap";
+@import "bower/bourbon/app/assets/stylesheets/_bourbon";
 
 /* Responsive Mobile */
 @import "_html_inputs";
@@ -27,7 +27,6 @@
 /* App Specific Tweaks */
 @import "_icons";
 @import "_home";
-@import "_reader";
 
 /* Standard HTML Elements for Cordova Bootstrap */
 * {
