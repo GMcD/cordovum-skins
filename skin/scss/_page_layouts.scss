@@ -1,0 +1,51 @@
+/*
+ * The Responsive Design is extended to branding.
+ * Four Palettes with Five colours are defined in _colours.
+ * 
+ */
+@import "_colours";
+
+/* ================================================ */
+/* Panel Usage - Header Background, Header Color,   */
+/*               Panel Background, Panel Border     */
+/* ================================================ */
+
+.panel {
+    border: none !important;
+}
+
+/* Foreground Panel */
+.panel-fg {
+    @include panel-variant($fpb-color, $fpt-color, $fpb-color, $fpt-color);
+    background-color: $bpf-color;
+}
+
+/* Background Panel */
+.panel-bg {
+    @include panel-variant($bpb-color, $bpt-color, $bpb-color, $bpt-color);
+    background-color: $bpb-color;
+}
+
+/* Highlight Panel */
+.panel-hi {
+    @include panel-variant($fpf-color, $fpt-color, $fpf-color, $fpt-color);
+}
+
+/* Lowlight Panel */
+.panel-lp {
+    @include panel-variant($fpt-color, $fpt-color, $bpf-color, $fpt-color);
+    background-color: $lpb-color;
+}
+
+/* for panel heading */
+.fixed {
+  position : fixed;
+  top : 0px;
+  z-index : 100;
+  width: 100%;
+}
+
+/* Non Parameterised/Calculated Bootstrap Thingummies - which cannot be overridden nicely without hacking BS */
+.table {
+    margin-bottom: 5px !important;
+}

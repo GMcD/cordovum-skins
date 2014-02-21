@@ -1,0 +1,171 @@
+/*
+ * The Responsive Design is extended to branding.
+ * Four Palettes with Five colours are defined here.
+ */
+@import "_colours";
+/*
+ * Use Bootstrap mixins mostly
+ */
+@import "bower_components/bootstrap-sass/lib/mixins";
+/*
+ * Add transform from bourbon
+ */
+@import "bower_components/bourbon/app/assets/stylesheets/addons/_prefixer.scss";
+@import "bower_components/bourbon/app/assets/stylesheets/css3/_transform.scss";
+
+/* ==================================================== */
+/* Text and Textarea Inputs                             */
+/* ==================================================== */
+input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    margin: 5px;
+    border: none;
+}
+
+/* ==================================================== */
+/* Select Input Dropdown                                */
+/* ==================================================== */
+
+select, select optgroup, select option {
+    -webkit-appearance: none;
+}
+
+label.select {
+    position: relative;
+    background-color: $fpf-color;
+    color: $fpt-color;
+}
+label.select:after {
+    content: '<>';
+    font: 16px "Consolas", monospace;
+    @include transform(rotate(90deg));
+    right: 19px; 
+    top: 0px;
+    padding: 0 0 2px;
+    border-bottom: 1px solid $fpt-color;
+    position: absolute;
+    pointer-events: none;
+}
+label.select:before {
+    content:'';
+    right: 16px; 
+    top: -3px;
+    width: 20px; 
+    height:26px;
+    position:absolute;
+    pointer-events:none;
+    display:block;
+}
+
+.dropdown-chevrons {
+    border-left: 2px solid $fpt-color;
+    position: absolute;
+    right: 0px;
+    top: -1px;
+    height: 100%;
+    width: 45px;
+}
+.dropdown-chevrons .fa-angle-up {
+    position: absolute;
+    top: -8px;
+    right: 8px;
+    font-size: 40px;    
+}
+.dropdown-chevrons .fa-angle-down {
+    position: absolute;
+    top: 14px;
+    right: 8px;
+    font-size: 40px;    
+}
+
+/* Calculate these - checkbox is 8x8 (say) and before/after/checked need to respond to a 
+   target size of 30x30 or 50x50 */
+/* ==================================================== */
+/* Checkboxes and Radio Buttons                         */
+/* ==================================================== */
+input[type='checkbox'], input[type='radio'] {
+    -webkit-appearance: none;
+    margin: 4px 8px 0 4px;
+    @include scale(2.5);
+}
+
+/* This is the after overall for pure CSS styling */
+input[type='checkbox']:after, input[type='checkbox']:checked:after,
+input[type='radio']:after, input[type='radio']:checked:after {
+    font-family: FontAwesome;
+    font-size: 24px;
+    display: block;
+    width: 38px;
+    height: 38px;
+    background: $fpf-color;
+    color: $bpf-color;
+    position: relative;
+    padding-left: 9px;
+    padding-right: 8px;
+    @include transform( scale(.4));
+}
+/* This is the Box without tick */
+input[type='checkbox']:after {
+    font-weight: bold;
+    padding-top: 9px;
+    content: '\f096';
+}
+/* This is the Box with tick */
+input[type='checkbox']:checked:after {
+    padding-top: 9px;
+    content: '\f046';
+}
+.ios input[type='checkbox'] {
+    margin: 10px 0px 4px 0px; 
+}
+.ios input[type='checkbox']:after, .ios input[type='radio']:after {
+    top: -12px;
+    left: -12px;
+}
+
+/* ==================================================== */
+/* Radio Buttons                                        */
+/* ==================================================== */
+input[type='radio']:after {
+    padding-top: 7px;
+    content: '\f10c';
+}
+input[type='radio']:checked:after {
+    padding-top: 7px;
+    content: '\f111';
+}
+.ios input[type='radio'] {
+    margin: 12px 0px 6px 0px; 
+}
+
+/* ==================================================== */
+/* Form Errors                                          */
+/* ==================================================== */
+
+/* ErrorList and Validation */
+.errorlist li:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    content: "\f05e";
+    padding-right: 4px;
+    color: $fpd-color;
+}
+.errorlist li {
+    list-style: none;
+    color: $fpd-color;
+}
+
+/* Form Controls */
+.form-inline input {
+    display:block;
+    width: 80%;
+}
+.form-inline input[type="submit"], .form-inline input[type="button"] {
+    display:inline-block;
+    width: 35%;
+}
+.form-inline input:after {
+    content:"\a";
+    white-space: pre;
+}

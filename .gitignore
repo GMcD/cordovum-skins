@@ -1,0 +1,19 @@
+# OSX
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Grunt and Friends
+.sass-cache/
+.grunt/
+_SpecRunner.html
+
+dist/
+bower/
+node_modules/
+app/css/

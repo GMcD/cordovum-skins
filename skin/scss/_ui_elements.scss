@@ -1,0 +1,165 @@
+/* ================================================ */
+/* UI Elements - All defined as abstract, based on  */
+/*               1 iPhone 4, < 320 wide             */
+/*               2 iPhone 5,                        */
+/*               3 MotoX                            */
+/*               4 iPad Mini, Android Tablet        */
+/*               5 iPad, Samsung Tab 10"            */
+/* ================================================ */
+
+/* Note there are 7 of these, allowing offsets in the elements */
+
+/* Button Font Sizes */
+$large-font-sizes:          ( 22px, 22px, 26px, 30px, 34px, 36px, 42px );
+/* Icon Font Sizes */
+$icon-font-sizes:           ( 24px, 24px, 28px, 32px, 36px, 38px, 44px );
+/* Text Font Sizes */
+$text-font-sizes:           ( 14px, 16px, 18px, 24px, 24px, 24px, 28px );
+/* Padding Top and Bottom */
+$paddings-top:              (  3px,  4px,  5px,  6px,  8px, 10px, 12px );
+/* Padding Left and Right */
+$paddings-left:             (  3px,  5px,  6px,  8px, 10px, 12px, 14px );
+/* Border Radius */
+$borders-radius:            (  2px,  3px,  4px,  6px,  8px,  8px, 10px );
+/* Margin Top and Bottom */
+$margins-top:               (  2px,  3px,  4px,  5px,  6px,  7px,  8px );
+/* Margin Left and Right */
+$margins-left:              (  2px,  3px,  4px,  5px,  6px,  7px,  8px );
+/* Gutters */
+$gutter-widths:             (  8px, 10px, 14px, 20px, 30px, 30px, 40px );
+/* Lozenge Widths */
+$lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
+
+/* Small Square Button */
+@mixin pill-button($size){
+  font-size: nth($text-font-sizes, $size);
+  padding: nth($paddings-top, $size) nth($paddings-left, $size);
+  border-radius: nth($borders-radius, $size) !important;
+  margin: nth($margins-top, $size);
+}
+/* Square Button */
+@mixin square-button($size){
+  font-size: nth($large-font-sizes, $size + 1);
+  padding: nth($paddings-top, $size + 1) nth($paddings-left, $size + 1);
+  border-radius: nth($borders-radius, $size + 1) !important;
+  margin: nth($margins-top, $size + 1);
+  .fa {
+    width: nth($large-font-sizes, $size + 1);
+  }
+}
+@mixin lozenge-button($size){
+  font-size: nth($large-font-sizes, $size);
+  padding: nth($paddings-top, $size) nth($paddings-left, $size);
+  width: nth($lozenge-widths, $size + 1);
+  margin: nth($margins-top, $size + 1);
+}
+@mixin panel-button($size){
+  font-size: nth($large-font-sizes, $size);
+  width: 95%;
+  height: nth($large-font-sizes, $size + 1) + 2 * nth($margins-top, $size) + nth($paddings-top, $size);
+  margin: nth($margins-top, $size + 2) nth($margins-left, $size + 2);
+  padding: nth($paddings-top, $size);
+}
+@mixin title-text($size){
+  font-size: nth($large-font-sizes, $size);
+}
+@mixin content-text($size){
+  font-size: nth($text-font-sizes, $size);
+}
+@mixin button-icon($size){
+  font-size: nth($icon-font-sizes, $size);
+}
+@mixin button-text($size){
+  position: relative;
+  left: nth($large-font-sizes, $size) + nth($paddings-left, $size);
+  padding-left: nth($paddings-left, $size);
+  font-size: nth($large-font-sizes, $size);
+  line-height: nth($large-font-sizes, $size + 1);
+}
+@mixin panel-body($size) {
+  padding: nth($paddings-top, $size) nth($paddings-left, $size) !important;
+}
+/* Extra Space above Nav Icon */
+@mixin panel-heading($size) {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  padding: nth($paddings-top, $size) nth($paddings-left, $size) !important;
+  .fa {
+    padding-top: nth($paddings-top, $size);
+    padding-left: nth($paddings-top, $size);
+  }
+  span:last-child {
+    margin-left: - (nth($large-font-sizes, $size) + nth($paddings-left, $size) );
+  }
+}
+@mixin guttering($size) {
+  margin: nth($margins-top, $size) nth($margins-left, $size);
+}
+/* Height of fixed panel header - $line-height + $margin * 2 + $border-bottom */
+@mixin scroll($size){
+  margin-top: floor(nth($large-font-sizes, $size) * $line-height-base) + 2 * nth($margins-top, $size) + 1;
+}
+
+@mixin details-table($size) {
+  td { 
+    padding: nth($paddings-top, $size) !important;
+  }
+  .fa {
+    font-size: nth($icon-font-sizes, $size);
+  }
+}
+
+/* ------------------------------------ *
+ * UI Elements Mixin for styling        *
+ * ------------------------------------ */
+@mixin styling($size){
+    /*
+     * Button Formats
+     */
+    .btn-pill {
+      @include pill-button($size);
+    }
+    .btn-square {
+      @include square-button($size);
+    }
+    .btn-lozenge {
+      @include lozenge-button($size);
+    }
+    .btn-panel {
+      @include panel-button($size);
+    }
+    /*
+     * Text Formats
+     */
+    .title-text {
+      @include title-text($size);
+    }
+    .content-text {
+      @include content-text($size);
+    }
+    button .fa {
+      @include button-icon($size);
+    }
+    .button-text {
+      @include button-text($size);
+    }
+    .details-table {
+      @include details-table($size);
+    }
+    /*
+     * Page Layouts
+     */
+    .panel-heading {
+      @include panel-heading($size);
+    }
+    .panel-body {
+      @include panel-body($size);
+    }
+    .scroll {
+      @include scroll($size);
+    }
+    .guttering {
+      @include guttering($size);
+    }
+} 
+

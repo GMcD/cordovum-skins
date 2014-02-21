@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/*!
+ * Pure CSS3 indicator styles.
+ *
+ * @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
+ */
+
+// Base definitions
+@import "indicator.base";
+
+// Themes
+@import "indicator.spinner";
+@import "indicator.bouncer";
+@import "indicator.pulsar";
+@import "indicator.squared";
+@import "indicator.loopy";
+@import "indicator.fblocks";

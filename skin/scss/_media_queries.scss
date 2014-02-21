@@ -1,0 +1,57 @@
+/* ================================================ */
+/* UI Elements - All defined as abstract, based on  */
+/*               1 iPhone 4, < 320 wide             */
+/*               2 iPhone 5,                        */
+/*               3 MotoX                            */
+/*               4 iPad Mini, Android Tablet        */
+/*               5 iPad, Samsung Tab 10"            */
+/* ================================================ */
+
+$iphone4 : 1;
+$iphone5 : 2;
+$phablet : 3;
+$stablet : 4;
+$ltablet : 5;
+$desktop : 6;
+
+/* ------------------------------------------ *
+ * iPhone 4 and Smaller Screens, no padding
+ * ------------------------------------------ */
+@media (max-width: $screen-xs-min) {
+    @include styling($iphone4);
+}
+
+/* ------------------------------------------ *
+ * iPhone 5 specifically
+ * ------------------------------------------ */
+@media screen and (device-aspect-ratio: 40/71) and (-webkit-min-device-pixel-ratio: 2) {
+    @include styling($iphone5);
+}
+
+/* ------------------------------------------ *
+ * Anything wider than 331px
+ * ------------------------------------------ */
+@media (min-width: $screen-xs-min + 1) {
+    @include styling($iphone5);
+}
+
+/* ----------------------------------------------------- *
+ * Small to Medium, Galaxy S3 and Friends - 321 to 640
+ * ----------------------------------------------------- */
+@media (min-width: $screen-xs-min + 1) and (max-width: $screen-sm-min) {
+    @include styling($phablet);
+}
+
+/* ---------------------------------------------------- *
+ * Small to Medium, iPad Mini and Friends - 640 - 768
+ * ---------------------------------------------------- */
+@media (min-width: $screen-sm-min + 1) and (max-width: $screen-md-min) {
+    @include styling($stablet);
+}
+
+/* -------------------------------------------------- *
+ * Small to Medium, iPad and Larger - 768 - upwards
+ * -------------------------------------------------- */
+@media (min-width: $screen-md-min + 1) {
+    @include styling($ltablet);
+}

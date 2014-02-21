@@ -1,0 +1,72 @@
+/*
+ * The Responsive Design is extended to branding.
+ * Four Palettes with Five colours are defined here.
+ */
+@import "_colours";
+
+/* ================================================ */
+/* Button Usage - Fore, Low or Back ground palette, */
+/* pill, square, lozenge or panel shape             */
+/*  <button class="btn btn-bfg btn-square">         */
+/*  <button class="btn btn-blp btn-lozenge">        */
+/*  <button class="btn btn-bbg btn-panel">          */
+/* Will size responsively for phone and tablet      */
+/* ================================================ */
+
+/*
+ * z-index for Button Images
+ */
+$z-img: 1;
+
+/*
+ * button-variant args : color, background, border
+ */
+
+/* Background Palette, Foreground Colour - e.g brown with orange on top */
+.btn-bfg {
+    @include button-variant($fpt-color, $fpf-color, $fpf-color);
+    border: 1px solid $fpf-color !important;
+    position: relative;
+}
+
+/* Low Palette, Foreground Colour - e.g light orange on grey */
+.btn-blp {
+    @include button-variant($lpb-color, $lpf-color, $lph-color);
+    border: 1px solid $lpb-color !important;
+    position: relative;
+}
+
+/* High Palette, Foreground Colour - e.g dark canary on canary */
+.btn-bhp {
+    @include button-variant($hpb-color, $hpf-color, $hpb-color);
+    border: 1px solid $hpb-color !important;
+    position: relative;
+}
+
+/* Background Palette, Text colour - e.g brown with white on top */
+.btn-bbg {
+    @include button-variant($bpt-color, $bpf-color, $bpt-color);
+    border: 1px solid $bpt-color !important;
+    position: relative;
+}
+.btn:hover {
+    color: $bpt-color !important;
+}
+.btn-bfg:active, .btn-bfg:focus, .btn-bfg:hover, .btn-bfg:visited {
+    background-color: $fpf-color !important;
+}
+.btn-bbg:active, .btn-bbg:focus, .btn-bbg:hover, .btn-bbg:visited {
+    background-color: inherit;
+}
+.btn-pill {
+    border: none !important; 
+}
+.btn-square:hover {
+  color: $fpt-color;
+}
+/* Button Sizes */
+button .fa, div .fa {
+    float: left;
+    z-index: $z-img;
+}
+

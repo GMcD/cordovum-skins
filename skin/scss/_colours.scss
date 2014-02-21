@@ -1,0 +1,70 @@
+/* ------------------------------------------------------------------------ */
+/* Standard colour constants defined here as sass variables.				*/
+/* Subsequently the App Palette colours are enumerated.						*/
+/* Then, the Palettes are made up from the App colours.						*/
+/* All colours should be mentioned outside of this file by variable name. 	*/
+/* ------------------------------------------------------------------------ */
+
+$white: white;
+$red: red;
+$purple: #3D3B5E;
+$lightgrey: #D4D4D4;
+$darkgrey: #343434;
+
+.white {
+	color: $white !important;
+}
+
+/* News App Palette Colours */
+$canary: #ead85d;
+$canary-dark: #cfbf50;
+$lime: #68d472;
+$lime-dark: #53b45c;
+$turquoise: #4eb7cd;
+$turquoise-dark: #3d95a7;
+$cobalt: #496bd8;
+$cobalt-dark: #3857b9;
+$plum: #9f88df;
+$plum-dark: #755eb3;
+$salmon: #ff6b6b;
+$salmon-dark: #dc5a5a;
+$grey-header: #343a48;
+$grey-dot: #d6d6d6;
+$blue-dot: #48defe;
+
+/* Are abstracted - Panel's for example do not use the brand named variables */
+/* Possible Direction - 
+	Five Colours in Palette - Foreground, Background, Highlight, Text and Danger
+	Four Palettes 			- Foreground, Background, Highlight and Lowlight
+
+	Class Prefix composed of three letters, identifying the role of the colour in the palette.
+		 Palette Initial, 'p', Colour Initial, -color 
+	In BNF ;-)
+		 [f|b|h|l]p[f|b|h|t|d]-color
+*/
+
+/* Foreground Palette */
+$fpt-color: $white;
+$fpf-color: $plum;
+$fpb-color: $plum-dark;
+$fph-color: $plum;
+$fpd-color: $red;
+
+/* Background Palette */
+$bpt-color: $white;
+$bpf-color: $plum-dark;
+$bpb-color: $white;
+$bph-color: $fph-color;
+
+/* Lowlight Palette */
+$lpt-color: $salmon-dark;
+$lpf-color: $salmon-dark;
+$lpb-color: $lightgrey;
+$lph-color: $salmon;
+
+/* Highlight Palette */
+$hpt-color: $canary-dark;
+$hpf-color: $canary-dark;
+$hpb-color: $canary;
+$hph-color: $canary;
+
