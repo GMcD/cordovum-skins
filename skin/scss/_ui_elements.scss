@@ -36,6 +36,9 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
   padding: nth($paddings-top, $size) nth($paddings-left, $size);
   border-radius: nth($borders-radius, $size) !important;
   margin: nth($margins-top, $size);
+  .fa {
+    line-height: 1;
+  }
 }
 /* Square Button */
 @mixin square-button($size){
@@ -45,6 +48,7 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
   text-align: center;
   margin: nth($margins-top, $size + 1);
   .fa {
+    line-height: 1;
     width: nth($large-font-sizes, $size + 1);
   }
 }
@@ -54,6 +58,9 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
   width: nth($lozenge-widths, $size + 1);
   margin: nth($margins-top, $size + 1);
   text-align: left;
+  .fa {
+    line-height: 1;
+  }
 }
 @mixin panel-button($size){
   font-size: nth($large-font-sizes, $size);
