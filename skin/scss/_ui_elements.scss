@@ -35,6 +35,7 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
   font-size: nth($text-font-sizes, $size);
   padding: nth($paddings-top, $size) nth($paddings-left, $size);
   border-radius: nth($borders-radius, $size) !important;
+  text-align: center;
   margin: nth($margins-top, $size);
   .fa {
     line-height: 1;
@@ -59,7 +60,7 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
   margin: nth($margins-top, $size + 1);
   text-align: left;
   .fa {
-    line-height: 1;
+    padding: nth($paddings-top, $size);
   }
 }
 @mixin panel-button($size){
@@ -79,8 +80,8 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
   font-size: nth($icon-font-sizes, $size);
 }
 @mixin button-text($size){
-  position: relative;
-  left: nth($large-font-sizes, $size) + nth($paddings-left, $size);
+//  position: relative;
+//  left: nth($large-font-sizes, $size) + nth($paddings-left, $size);
   padding-left: nth($paddings-left, $size);
   font-size: nth($large-font-sizes, $size);
   line-height: nth($large-font-sizes, $size + 1);
