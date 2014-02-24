@@ -92,23 +92,18 @@ label.select:before {
 input[type='checkbox'], input[type='radio'] {
     -webkit-appearance: none;
     margin: 4px 8px 0 4px;
-    @include scale(2.5);
+//    @include scale(2.5);
 }
 
 /* This is the after overall for pure CSS styling */
 input[type='checkbox']:after, input[type='checkbox']:checked:after,
 input[type='radio']:after, input[type='radio']:checked:after {
     font-family: FontAwesome;
-    font-size: 24px;
     display: block;
-    width: 38px;
-    height: 38px;
     background: $fpf-color;
     color: $bpf-color;
     position: relative;
-    padding-left: 9px;
-    padding-right: 8px;
-    @include transform( scale(.4));
+//    @include transform( scale(.4));
 }
 /* This is the Box without tick */
 input[type='checkbox']:after {

@@ -66,11 +66,22 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
 @mixin panel-button($size){
   font-size: nth($large-font-sizes, $size);
   width: 95%;
-  height: nth($large-font-sizes, $size + 1) + 2 * nth($margins-top, $size) + 2 * nth($paddings-top, $size);
+//  height: nth($large-font-sizes, $size + 1) + 2 * nth($margins-top, $size) + 2 * nth($paddings-top, $size);
   margin: nth($margins-top, $size + 2) nth($margins-left, $size + 2);
   .fa {
     padding: nth($paddings-top, $size);
   }
+}
+
+/*
+ * Radio Buttons and Checkboxes
+ */
+@mixin radio-check($size){
+  font-size: nth($text-font-sizes, $size);
+  width: nth($text-font-sizes, $size) + nth($paddings-left, $size);
+  height: nth($text-font-sizes, $size) + nth($paddings-top, $size);
+  padding-left: nth($paddings-left, $size);
+  padding-right: nth($paddings-left, $size);
 }
 
 /*
@@ -144,6 +155,14 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
     .btn-panel {
       @include panel-button($size);
     }
+
+    /*
+     * HTML Inputs
+     */
+    .radio-check {
+      @include radio-check($size);
+    }
+
     /*
      * Text Formats
      */
