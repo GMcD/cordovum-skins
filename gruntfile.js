@@ -48,7 +48,7 @@ module.exports = function (grunt) {
                     { src: 'skin/fonts/**', dest: appwww, expand: true },
                     { src: 'skin/app.html', dest: appwww, expand: true },
                     { src: 'skin/require.app.js', dest: appwww, expand: true },
-/*                    { src: 'bower/requirejs/require.js', dest: appwww, expand: true },
+                    { src: 'bower/requirejs/require.js', dest: appwww, expand: true },
                     { src: 'bower/requirejs-text/text.js', dest: appwww, expand: true },
                     { src: 'bower/backbone/backbone.js', dest: appwww, expand: true },
                     { src: 'bower/jquery/jquery.js', dest: appwww, expand: true },
@@ -70,10 +70,18 @@ module.exports = function (grunt) {
                     { src: 'bower/jscrollpane/style/jquery.jscrollpane.css', dest: appwww, expand: true },
                     { src: 'bower/jscrollpane/themes/lozenge/style/jquery.jscrollpane.lozenge.css', dest: appwww, expand: true },
                     { src: 'bower/jasmine/lib/jasmine-core/*.js', dest: appwww, expand: true },
-                    { src: 'bower/jasmine/lib/jasmine-core/jasmine.css', dest: appwww, expand: true }, */
+                    { src: 'bower/jasmine/lib/jasmine-core/jasmine.css', dest: appwww, expand: true },
                     { src: 'skin/jasmine.html', dest: appwww, expand: true },
                     { src: 'skin/require.jasmine.js', dest: appwww, expand: true },
                     { src: 'skin/tests/**', dest: appwww, expand: true },
+                ]
+            },  
+            /* Copy Assets for Bower Distribution */          
+            dist: {
+                files: [
+                    { src: 'skin/fonts/*', dest: appwww + '/fonts/', expand: true, flatten: true },
+                    { src: 'skin/views/*', dest: appwww + '/views/', expand: true, flatten: true },
+                    { src: 'bower/font-awesome/fonts/*', dest: appwww + '/fonts/', expand: true, flatten: true },
                 ]
             },
         },
@@ -126,7 +134,7 @@ module.exports = function (grunt) {
         cssmin: {
             skin: {
                 files: {
-                    'dist/css/s.css': ['skin/css/app.css', 'bower/font-awesome/css/font-awesome.css', 'bower/jscrollpane/style/jquery.jscrollpane.css', 'bower/jscrollpane/themes/lozenge/style/jquery.jscrollpane.lozenge.css']
+                    'dist/css/skin.css': ['skin/css/app.css', 'bower/font-awesome/css/font-awesome.css', 'bower/jscrollpane/style/jquery.jscrollpane.css', 'bower/jscrollpane/themes/lozenge/style/jquery.jscrollpane.lozenge.css']
                 }
             },
         },
@@ -139,7 +147,7 @@ module.exports = function (grunt) {
                     include: ['app','router'],
                     mainConfigFile: 'skin/require.app.js',
                     insertRequire: ['app'],
-                    out: 'dist/js/opt.app.js',
+                    out: 'dist/js/opt.skin.js',
                     optimize: 'none'
                 }
             },
@@ -173,6 +181,6 @@ module.exports = function (grunt) {
     /* Initial Setup Task - Create Cordova App and add ios and android */
 //    grunt.registerTask('setup', [ 'cordovacli:create', 'cordovacli:add_platforms' ]);
     /* Compile them up */
-    grunt.registerTask('production', [ 'jshint', 'sass', 'connect', 'jasmine', 'cssmin', 'copy', 'requirejs' ]);
+    grunt.registerTask('production', [ 'jshint', 'sass', 'connect', 'jasmine', 'cssmin', 'copy:dist', 'requirejs' ]);
 
 };

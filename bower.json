@@ -1,6 +1,6 @@
 {
-  "name": "skin",
-  "version": "0.0.0",
+  "name": "rm-skin",
+  "version": "0.0.1",
   "homepage": "https://github.com/GMcD/cordovum-skins.git",
   "authors": [
     "GMcD <gary.macdonald@projectscapa.com>"
@@ -13,7 +13,7 @@
     "theme"
   ],
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "jquery": "~2.0.3",
     "requirejs": "~2.1.9",
     "backbone": "~1.1.0",
