@@ -34,3 +34,19 @@ $screen-md:                  992px !default;
 $screen-md-min:              $screen-md !default;
 $screen-lg:                  1200px !default;
 $screen-lg-min:              $screen-lg !default;
+
+/* ================================================ */
+/* UI Elements - All defined as abstract, based on  */
+/*               1 iPhone 4, < 320 wide             */
+/*               2 iPhone 5,                        */
+/*               3 MotoX                            */
+/*               4 iPad Mini, Android Tablet        */
+/*               5 iPad, Samsung Tab 10"            */
+/* ================================================ */
+
+$iphone4 : 1 !default;
+$iphone5 : 2 !default;
+$phablet : 3 !default;
+$stablet : 4 !default;
+$ltablet : 5 !default;
+$desktop : 6 !default;
