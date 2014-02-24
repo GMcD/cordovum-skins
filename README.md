@@ -3,10 +3,12 @@ cordovum-skins
 
 Responsive Mobile Skins for Cordovum
 
-Build and Installation
+Build and Distribution
 ----------------------
 
 First clone the repo, then <code>npm install</code>, <code>bower install</code>, and finally <code>grunt production</code>.
+
+Bump the version, add and commit the distribution, push to GitHub.
 
 Deployment and Usage
 --------------------
