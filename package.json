@@ -1,6 +1,6 @@
 {
   "name": "cordovum-skins",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Cordovum SPA Skins",
   "main": "gruntfile.js",
   "scripts": {
