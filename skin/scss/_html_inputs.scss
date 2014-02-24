@@ -36,6 +36,11 @@ label.select {
     background-color: $fpf-color;
     color: $fpt-color;
 }
+label.select option {
+    background-color: $fpf-color;
+    color: $fpt-color;
+    padding: 5px;
+}
 label.select:after {
     content: '<>';
     font: 16px "Consolas", monospace;
