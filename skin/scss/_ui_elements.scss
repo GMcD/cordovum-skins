@@ -69,6 +69,9 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
   height: nth($large-font-sizes, $size + 1) + 2 * nth($margins-top, $size) + nth($paddings-top, $size);
   margin: nth($margins-top, $size + 2) nth($margins-left, $size + 2);
   padding: nth($paddings-top, $size);
+  .fa {
+    padding: nth($paddings-top, $size);
+  }
 }
 @mixin title-text($size){
   font-size: nth($large-font-sizes, $size);

@@ -18,7 +18,7 @@ sed -i -e "3s/$version/$newversion/" package.json
 
 grunt production
 git add .
-git commit -m '$MESSAGE'
+git commit -m "$MESSAGE"
 
 git push
 
