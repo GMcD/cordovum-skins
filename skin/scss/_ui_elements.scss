@@ -78,10 +78,10 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
  */
 @mixin radio-check($size){
   font-size: nth($text-font-sizes, $size);
-  width: nth($text-font-sizes, $size) + nth($paddings-left, $size);
+  width: nth($text-font-sizes, $size) + 2 * nth($paddings-left, $size);
   height: nth($text-font-sizes, $size) + nth($paddings-top, $size);
-  padding-left: nth($paddings-left, $size);
-  padding-right: nth($paddings-left, $size);
+  padding-left: nth($paddings-left, $size) !important;
+  padding-right: nth($paddings-left, $size) !important;
 }
 
 /*
