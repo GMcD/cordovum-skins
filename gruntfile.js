@@ -107,11 +107,11 @@ module.exports = function (grunt) {
                 }
             }
         },
-        // Sass compile
+        // Sass compile - Skin to css, then minimised to skin.css. Theme overrides will pull in skin.scss and override.
         sass: {
             dist: {
                 files: {
-                    'skin/css/app.css' : 'skin/scss/app.scss'
+                    'skin/css/app.css' : 'skin/scss/skin.scss'
                 }
             }
         },
