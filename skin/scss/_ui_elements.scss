@@ -99,7 +99,7 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
 @mixin panel-heading($size) {
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
-  padding: nth($paddings-top, $size) nth($paddings-left, $size) nth($paddings-top, $size - 1) nth($paddings-left, $size) !important;
+  padding: nth($paddings-top, $size) nth($paddings-left, $size) !important;
   .fa {
     padding-top: nth($paddings-top, $size);
     padding-left: nth($paddings-top, $size);
