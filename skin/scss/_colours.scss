@@ -16,21 +16,21 @@ $darkgrey: #343434;
 }
 
 /* News App Palette Colours */
-$canary: #ead85d;
-$canary-dark: #cfbf50;
-$lime: #68d472;
-$lime-dark: #53b45c;
-$turquoise: #4eb7cd;
-$turquoise-dark: #3d95a7;
-$cobalt: #496bd8;
-$cobalt-dark: #3857b9;
-$plum: #9f88df;
-$plum-dark: #755eb3;
-$salmon: #ff6b6b;
-$salmon-dark: #dc5a5a;
-$grey-header: #343a48;
-$grey-dot: #d6d6d6;
-$blue-dot: #48defe;
+$canary 		: #ead85d !default;
+$canary-dark 	: #cfbf50 !default;
+$lime 			: #68d472 !default;
+$lime-dark 		: #53b45c !default;
+$turquoise 		: #4eb7cd !default;
+$turquoise-dark : #3d95a7 !default;
+$cobalt 		: #496bd8 !default;
+$cobalt-dark 	: #3857b9 !default;
+$plum 			: #9f88df !default;
+$plum-dark 		: #755eb3 !default;
+$salmon 		: #ff6b6b !default;
+$salmon-dark 	: #dc5a5a !default;
+$grey-header 	: #343a48 !default;
+$grey-dot 		: #d6d6d6 !default;
+$blue-dot 		: #48defe !default;
 
 /* Are abstracted - Panel's for example do not use the brand named variables */
 /* Possible Direction - 
@@ -44,27 +44,27 @@ $blue-dot: #48defe;
 */
 
 /* Foreground Palette */
-$fpt-color: $white;
-$fpf-color: $plum;
-$fpb-color: $plum-dark;
-$fph-color: $plum;
-$fpd-color: $red;
+$fpt-color: 	  $white !default;
+$fpf-color: 	   $plum !default;
+$fpb-color:   $plum-dark !default;
+$fph-color:        $plum !default;
+$fpd-color: 	    $red !default;
 
 /* Background Palette */
-$bpt-color: $white;
-$bpf-color: $plum-dark;
-$bpb-color: $white;
-$bph-color: $fph-color;
+$bpt-color:   	  $white !default;
+$bpf-color:   $plum-dark !default;
+$bpb-color:       $white !default;
+$bph-color:   $fph-color !default;
 
 /* Lowlight Palette */
-$lpt-color: $salmon-dark;
-$lpf-color: $salmon-dark;
-$lpb-color: $lightgrey;
-$lph-color: $salmon;
+$lpt-color: $salmon-dark !default;
+$lpf-color: $salmon-dark !default;
+$lpb-color:   $lightgrey !default;
+$lph-color:      $salmon !default;
 
 /* Highlight Palette */
-$hpt-color: $canary-dark;
-$hpf-color: $canary-dark;
-$hpb-color: $canary;
-$hph-color: $canary;
+$hpt-color: $canary-dark !default;
+$hpf-color: $canary-dark !default;
+$hpb-color: 	 $canary !default;
+$hph-color: 	 $canary !default;
 
