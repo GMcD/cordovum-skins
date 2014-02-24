@@ -13,7 +13,6 @@
 .grunt/
 _SpecRunner.html
 
-dist/
 bower/
 node_modules/
 skin/css/
